@@ -9,6 +9,7 @@
   "author": "Niroshan se/2017/031",
   "license": "MIT",
   "dependencies": {
+    "@fastify/formbody": "^7.4.0",
     "@grpc/proto-loader": "^0.5.3",
     "body-parser": "^1.18.3",
     "ejs": "^3.1.8",

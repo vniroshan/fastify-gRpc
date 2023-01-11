@@ -12,7 +12,7 @@ message Empty {}
 
 message Todo {
     int32 id = 1;
-    string tirle = 2;
+    string title = 2;
     string body = 3;
 }
 
