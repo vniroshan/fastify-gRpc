@@ -11,34 +11,14 @@ fastify.register(require("point-of-view"), {
 
 // Declare a route
 
-fastify.get("/", async (request, reply) => {
-  let todo = [
-    {
-      id: 1,
-      title: "Title 1",
-      body: "Body 1",
-    },
-    {
-      id: 2,
-      title: "Title 2",
-      body: "Body 2",
-    },
-    {
-      id: 3,
-      title: "Title 3",
-      body: "Body 3",
-    },
-  ];
-
-  try {
-    await client.getAll(null, (err, data) => {
-      console.log(data.todo);
-      return data.todo;
-    });
-    return reply.view("./views/index.ejs", { todo: todo });
-  } catch {
-    return reply.status(400).send({ mgs: "error" });
-  }
+fastify.get("/", (request, reply) => {
+	client.getAll(null, (err, data) => {
+		if (!err) {
+			reply.view("./views/index.ejs", {
+				todo: data.todo
+			});
+		}
+	});
 });
 
 fastify.post("/add", async (request, reply) => {
