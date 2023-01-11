@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <title>gRpc</title>
+  </head>
+  <style>
+    .card-404 {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      word-wrap: break-word;
+      background-color: #fff;
+      background-clip: border-box;
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      border-radius: 0.25rem;
+    }
+
+    .card-404 .card-header {
+      background-color: #fff;
+      border-bottom: none;
+    }
+  </style>
+  <body class="antialiased">
+    <section class="section">
+      <div class="row justify-content-center">
+        <div class="col-md-12 col-sm-12">
+          <div
+            class="card card-404 shadow-lg border-0 rounded-lg mt-5 mx-auto"
+            style="width: 30rem"
+          >
+            <h3 class="card-header display-1 text-muted text-center">gRpc</h3>
+            <span class="card-subtitle mb-2 text-muted text-center">
+              V.NIROSHAN SE/2017/031
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="container px-5 pt-5">
+        <form action="/missing" method="POST">
+          <div class="card">
+            <h5 class="card-header">To Do</h5>
+            <div class="card-body" id="myForm">
+              <div class="text-right pa-3 mb-2">
+                <button type="button" class="btn btn-primary ">Add</button>
+              </div>
+
+              <table class="table table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Body</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% for (var i = 0; i < todo.length; i++) { %>
+                  <tr>
+                    <th scope="row"><%= todo[i].id %></th>
+                    <td><%= todo[i].title %></td>
+                    <td><%= todo[i].body %></td>
+                    <td>
+                      <button type="button" class="btn btn-danger btn-sm">
+                        Delete
+                      </button>
+                      <button type="button" class="btn btn-primary btn-sm">
+                        Edit
+                      </button>
+                    </td>
+                  </tr>
+                  <% } %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    function changeStyle() {
+      var element = document.getElementById("myForm");
+      if (this.todo) {
+        element.style.display = "none";
+      }
+    }
+  </script>
+</html>
