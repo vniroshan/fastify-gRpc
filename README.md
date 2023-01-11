@@ -13,5 +13,5 @@ npm run start
 3. Run Client
 ```
 cd client
-node node server.js
+node server.js
 ```
