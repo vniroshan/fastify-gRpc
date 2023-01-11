@@ -11,7 +11,7 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
-    <title>gRpc</title>
+    <title>gRPC</title>
   </head>
   <style>
     .card-table {
@@ -39,7 +39,7 @@
             class="card card-table shadow-lg border-0 rounded-lg mt-5 mx-auto"
             style="width: 30rem"
           >
-            <h3 class="card-header display-1 text-muted text-center">gRpc</h3>
+            <h3 class="card-header display-1 text-muted text-center">gRPC</h3>
             <span class="card-subtitle mb-2 text-muted text-center">
               V.NIROSHAN SE/2017/031
             </span>
@@ -71,6 +71,7 @@
                 </tr>
               </thead>
               <tbody>
+                <% if (todo.length >0) { %>
                 <% for (var i = 0; i < todo.length; i++) { %>
                 <tr>
                   <th scope="row"><%= todo[i].id %></th>
@@ -90,6 +91,12 @@
                       Edit
                     </button>
                   </td>
+                </tr>
+                <% } %>
+                <% } %>
+                <% if (todo.length == 0) { %>
+                <tr>
+                    <td colspan="4" class="text-center">No items to display.</td>
                 </tr>
                 <% } %>
               </tbody>

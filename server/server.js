@@ -50,8 +50,13 @@ server.addService(todoProto.TodoService.service, {
   },
 
   insert: (call, callback) => {
-    let id = todo[todo.length - 1].id + 1;
+    let id 
     let item = call.request;
+    if(todo.length >0){
+     id = todo[todo.length - 1].id + 1;
+    }else{
+      id = 1
+    }
 
     item.id = id;
     todo.push(item);
